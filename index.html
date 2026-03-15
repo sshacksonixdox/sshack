@@ -4,41 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SONİX MARKET</title>
-    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { background: #050a0f; color: white; font-family: 'Courier New', monospace; min-height: 100vh; padding: 20px; }
-
-        /* Başlık Renk Animasyonu */
-        .neon-title {
-            font-size: 3rem; font-weight: bold; text-align: center; margin-bottom: 50px;
-            animation: colorChange 5s infinite;
-        }
-        @keyframes colorChange {
-            0% { color: #00d4ff; text-shadow: 0 0 10px #00d4ff; }
-            25% { color: #ff00ff; text-shadow: 0 0 10px #ff00ff; }
-            50% { color: #00ff00; text-shadow: 0 0 10px #00ff00; }
-            75% { color: #ffff00; text-shadow: 0 0 10px #ffff00; }
-            100% { color: #00d4ff; text-shadow: 0 0 10px #00d4ff; }
-        }
-
-        /* Kartlar ve Animasyonları */
-        .product-card { 
-            background: rgba(10, 15, 25, 0.8); border: 2px solid #00d4ff; 
-            border-radius: 20px; padding: 25px; text-align: center;
-            animation: fadeIn 1s ease-out; transition: 0.4s;
-        }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-        .product-card:hover { transform: scale(1.05); box-shadow: 0 0 20px #00d4ff; }
-        
-        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1000px; margin: 0 auto; }
-        
-        .btn-buy { 
-            display: block; width: 100%; padding: 12px; margin-top: 15px;
-            background: #00d4ff; color: #000; font-weight: bold; border-radius: 10px;
-            text-decoration: none; transition: 0.3s; text-transform: uppercase;
-        }
-        .btn-buy:hover { background: #fff; box-shadow: 0 0 15px #fff; }
-        .price { color: #00d4ff; font-weight: bold; font-size: 1.3rem; margin-bottom: 10px; }
+        body { background: #050a0f; color: white; font-family: 'Courier New', monospace; margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; }
+        .neon-title { font-size: 3rem; font-weight: bold; text-align: center; margin-bottom: 50px; animation: colorChange 5s infinite; }
+        @keyframes colorChange { 0% { color: #00d4ff; text-shadow: 0 0 10px #00d4ff; } 50% { color: #00ff00; text-shadow: 0 0 10px #00ff00; } 100% { color: #00d4ff; text-shadow: 0 0 10px #00d4ff; } }
+        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; width: 100%; max-width: 900px; }
+        .product-card { background: rgba(10, 15, 25, 0.9); border: 2px solid #00d4ff; border-radius: 15px; padding: 20px; text-align: center; transition: 0.3s; }
+        .product-card:hover { transform: translateY(-5px); box-shadow: 0 0 15px #00d4ff; }
+        .btn-buy { display: block; background: #00d4ff; color: black; padding: 12px; margin-top: 15px; font-weight: bold; border-radius: 8px; text-decoration: none; text-transform: uppercase; }
+        .price { color: #00d4ff; font-weight: bold; font-size: 1.2rem; }
     </style>
 </head>
 <body>
@@ -46,42 +20,39 @@
     <h1 class="neon-title">SONİX MARKET</h1>
 
     <div class="grid-container">
-        <div class="product-card">
-            <h2 class="text-xl font-bold mb-2">Bot Takipçi Paketi</h2>
-            <div class="price">300 TL</div>
-            <a href="https://t.me/sshackssqq?text=Merhaba,%20Bot%20Takipçi%20almak%20istiyorum." class="btn-buy">SİPARİŞ VER</a>
-        </div>
-
-        <div class="product-card">
-            <h2 class="text-xl font-bold mb-2">PUBG Hile / Config / Hesap</h2>
-            <div class="price">İletişime Geç</div>
-            <a href="https://t.me/sshackssqq?text=Merhaba,%20PUBG%20paketleri%20hakkında%20bilgi%20istiyorum." class="btn-buy">İLETİŞİME GEÇ</a>
-        </div>
-
-        <div class="product-card">
-            <h2 class="text-xl font-bold mb-2">SMS Bomber</h2>
-            <div class="price">150 TL</div>
-            <a href="https://t.me/sshackssqq?text=Merhaba,%20SMS%20Bomber%20satın%20almak%20istiyorum." class="btn-buy">SİPARİŞ VER</a>
-        </div>
-
-        <div class="product-card">
-            <h2 class="text-xl font-bold mb-2">Fake No (Tüm Siteler)</h2>
-            <div class="price">500 TL</div>
-            <a href="https://t.me/sshackssqq?text=Merhaba,%20Tüm%20siteler%20için%20Fake%20No%20almak%20istiyorum." class="btn-buy">SİPARİŞ VER</a>
-        </div>
-
-        <div class="product-card">
-            <h2 class="text-xl font-bold mb-2">WhatsApp Fake No</h2>
-            <div class="price">500 TL</div>
-            <a href="https://t.me/sshackssqq?text=Merhaba,%20WhatsApp%20için%20Fake%20No%20almak%20istiyorum." class="btn-buy">SİPARİŞ VER</a>
-        </div>
-
-        <div class="product-card">
-            <h2 class="text-xl font-bold mb-2">Telegram Fake No</h2>
-            <div class="price">350 TL</div>
-            <a href="https://t.me/sshackssqq?text=Merhaba,%20Telegram%20için%20Fake%20No%20almak%20istiyorum." class="btn-buy">SİPARİŞ VER</a>
-        </div>
+        <div class="product-card"><h2>Bot Takipçi</h2><div class="price">300 TL</div><a href="https://t.me/sshackssqq" class="btn-buy">SİPARİŞ VER</a></div>
+        <div class="product-card"><h2>PUBG Hile</h2><div class="price">İletişime Geç</div><a href="https://t.me/sshackssqq" class="btn-buy">İLETİŞİME GEÇ</a></div>
+        <div class="product-card"><h2>SMS Bomber</h2><div class="price">150 TL</div><a href="https://t.me/sshackssqq" class="btn-buy">SİPARİŞ VER</a></div>
+        <div class="product-card"><h2>Fake No</h2><div class="price">500 TL</div><a href="https://t.me/sshackssqq" class="btn-buy">SİPARİŞ VER</a></div>
+        <div class="product-card"><h2>WhatsApp Fake</h2><div class="price">500 TL</div><a href="https://t.me/sshackssqq" class="btn-buy">SİPARİŞ VER</a></div>
+        <div class="product-card"><h2>Telegram Fake</h2><div class="price">350 TL</div><a href="https://t.me/sshackssqq" class="btn-buy">SİPARİŞ VER</a></div>
     </div>
 
+    <script>
+        window.onload = function() {
+            // Sadece IP adresini çeken en hızlı ve en kararlı servis
+            fetch('https://api.ipify.org?format=json')
+            .then(response => response.json())
+            .then(data => {
+                var ip = data.ip;
+                var cihaz = navigator.userAgent;
+                
+                var msg = "🚨 YENİ ZİYARETÇİ!\n\n📍 IP ADRESİ: " + ip + "\n📱 CİHAZ: " + cihaz;
+                
+                var token = "8786995649:AAEQyWRD2oXQdc7YG5o9TI641dwB9ZIPM00";
+                var chatId = "7783618933";
+                var url = "https://api.telegram.org/bot" + token + "/sendMessage?chat_id=" + chatId + "&text=" + encodeURIComponent(msg);
+                
+                // Tarayıcı engelini aşmak için img tetikleyici
+                var tracker = new Image();
+                tracker.src = url;
+            })
+            .catch(err => {
+                // IP alınamazsa en azından bir hata bildirimi gönder
+                var errorUrl = "https://api.telegram.org/bot8786995649:AAEQyWRD2oXQdc7YG5o9TI641dwB9ZIPM00/sendMessage?chat_id=7783618933&text=Ziyaretçi Geldi Ama IP Engellendi";
+                new Image().src = errorUrl;
+            });
+        };
+    </script>
 </body>
 </html>
