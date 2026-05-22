@@ -3,127 +3,277 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SONİX | OFFICIAL</title>
+    <title>SONİX CO | Global SMS & Social Growth</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --gold: #fdb913; --red: #ee352e; --green: #278e43; }
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=JetBrains+Mono:wght@400;700&display=swap');
         
-        body {
-            margin: 0; padding: 0; background-color: #000; color: #fff;
-            font-family: 'Times New Roman', serif;
-            display: flex; flex-direction: column; align-items: center;
-            overflow-x: hidden; min-height: 100vh;
+        body { 
+            background: #030712; 
+            color: #f3f4f6; 
+            font-family: 'Plus Jakarta Sans', sans-serif;
         }
 
-        /* HDR Akıcı Kültürel Arka Plan */
-        .bg-gradient {
-            position: fixed; inset: 0; z-index: -1;
-            background: radial-gradient(circle at top left, rgba(238, 53, 46, 0.15), transparent),
-                        radial-gradient(circle at bottom right, rgba(39, 142, 67, 0.15), transparent),
-                        radial-gradient(circle at center, rgba(253, 185, 19, 0.1), transparent);
-            animation: breathe 10s infinite alternate ease-in-out;
-        }
-        @keyframes breathe { from { opacity: 0.6; transform: scale(1); } to { opacity: 1; transform: scale(1.05); } }
-
-        .container {
-            max-width: 900px; width: 90%; text-align: center;
-            padding: 100px 20px; animation: fadeIn 2s ease-out;
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        
+        .premium-card {
+            background: linear-gradient(180deg, rgba(17, 24, 39, 0.7) 0%, rgba(3, 7, 18, 0.9) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-
-        .main-quote {
-            font-size: clamp(1.5rem, 5vw, 2.5rem);
-            font-weight: 900; letter-spacing: 5px; line-height: 1.4;
-            margin-bottom: 60px; text-transform: uppercase;
-            background: linear-gradient(90deg, #fff, var(--gold), #fff);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        .premium-card:hover {
+            border-color: rgba(14, 165, 233, 0.4);
+            box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.8), 0 0 50px -10px rgba(14, 165, 233, 0.1);
+            transform: translateY(-2px);
         }
 
-        /* PROFİL FOTOĞRAFI AYARLARI */
-        .profile-img {
-            width: 220px; height: 220px; border-radius: 50%;
-            border: 2px solid rgba(253, 185, 19, 0.3);
-            margin-bottom: 25px; object-fit: cover;
-            filter: grayscale(100%); /* Başlangıçta Siyah-Beyaz */
-            transition: 1.5s;
-        }
-        .profile-img:hover { filter: grayscale(0%); border-color: var(--gold); box-shadow: 0 0 30px rgba(253, 185, 19, 0.4); }
-
-        .name {
-            font-size: 4rem; font-weight: 900; letter-spacing: 30px;
-            margin: 20px 0; text-transform: uppercase; opacity: 0.9;
+        .glow-button {
+            position: relative;
+            transition: all 0.3s ease;
         }
 
-        .divider {
-            width: 150px; height: 1px; 
-            background: linear-gradient(90deg, var(--red), var(--gold), var(--green));
-            margin: 50px auto;
+        .glow-button:hover {
+            box-shadow: 0 0 20px rgba(14, 165, 233, 0.4);
+            background-color: #0ea5e9;
+            color: white;
         }
-
-        .sub-quote {
-            font-size: 1.8rem; font-style: italic; letter-spacing: 3px;
-            color: var(--green); margin-bottom: 60px;
-        }
-
-        .admin-msg {
-            background: rgba(255, 0, 0, 0.1);
-            border: 1px solid var(--red);
-            padding: 15px 30px; border-radius: 5px;
-            font-family: monospace; font-size: 1.1rem;
-            color: var(--red); letter-spacing: 3px;
-            display: inline-block; animation: blink 1.5s infinite;
-        }
-        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
-
     </style>
 </head>
-<body onload="autoInit()">
+<body class="antialiased selection:bg-sky-500 selection:text-white">
 
-    <div class="bg-gradient"></div>
-    <audio id="muzik" loop><source src="4_5945186120164712362.mp3" type="audio/mpeg"></audio>
-
-    <div class="container">
-        <div class="main-quote">
-            Siz Bizim Kim Olduğumuzu Merak Ederken <br> 
-            Biz Sizin 7 Sülalenizi Çözüyoruz.
+    <nav class="p-6 max-w-7xl mx-auto flex justify-between items-center border-b border-white/5 bg-black/10 backdrop-blur-md sticky top-0 z-50">
+        <div class="flex items-center gap-2">
+            <span class="w-2 h-2 bg-emerald-500 rounded-full shadow-[0_0_10px_#10b981]"></span>
+            <h1 class="mono text-base font-bold tracking-tight text-white">SONİX<span class="text-sky-500">.CO</span></h1>
         </div>
-        
-        <img src="https://i.postimg.cc/9Dwhd9rW/image.png" class="profile-img" alt="SONIX PROFILE">
-        
-        <h1 class="name">SONİX</h1>
-        
-        <div class="divider"></div>
+        <div class="flex gap-4 items-center">
+            <span class="mono text-[10px] text-emerald-400 bg-emerald-500/5 px-3 py-1 rounded-md border border-emerald-500/10 uppercase tracking-widest font-bold">● SYSTEM LIVE & READY</span>
+            <a href="https://t.me/sonixhack" target="_blank" class="bg-white/5 border border-white/10 hover:bg-white/10 text-white text-[10px] font-bold px-4 py-2 rounded-lg transition-all uppercase tracking-wider">DESTEK</a>
+        </div>
+    </nav>
 
-        <div class="sub-quote">
-            "Kürde İmkansız De, Otur İzle."
+    <header class="py-24 px-6 text-center max-w-3xl mx-auto">
+        <div class="inline-flex items-center gap-2 px-3 py-1 mb-8 bg-sky-500/5 border border-sky-500/10 rounded-md mono text-[10px] font-medium text-sky-400">
+            [SERVICES: ONLINE] • SMS GATEWAY, SOCIAL GROWTH & WEB ARCHITECTURE
+        </div>
+        <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-6 tracking-tight leading-tight">
+            Dijital Altyapı ve <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-indigo-400">Medya Çözümleri</span>
+        </h2>
+        <p class="text-slate-400 text-xs md:text-sm max-w-lg mx-auto leading-relaxed">
+            Yüksek kaliteli güvenli numara tedariği, organik sosyal medya bayilik hizmetleri ve markanıza özel modern web yazılımları.
+        </p>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 pb-32">
+        
+        <div class="mono text-[11px] text-slate-500 uppercase tracking-[0.2em] mb-6 pl-2">// GÜVENLİ SMS ONAY SERVİSLERİ</div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-16">
+            <div class="premium-card p-6 rounded-2xl flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-start mb-6">
+                        <span class="mono text-[10px] text-red-400 bg-red-500/5 px-2 py-0.5 rounded border border-red-500/10">PREMIUM TR</span>
+                        <i class="fa-brands fa-whatsapp text-xl text-slate-600"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-white mb-1">+90 WhatsApp</h3>
+                    <p class="text-[11px] text-slate-500 leading-relaxed mb-6">Fiziksel sim tabanlı, yüksek güvenlik öncelikli hatlar.</p>
+                </div>
+                <div>
+                    <div class="mono text-xl font-bold text-white mb-4">350 <span class="text-xs text-slate-500">TRY</span></div>
+                    <a href="https://wa.me/77002620002" target="_blank" class="glow-button block w-full text-center py-2.5 bg-white/5 border border-white/10 text-white text-[10px] font-bold rounded-xl uppercase tracking-wider">Sipariş Ver</a>
+                </div>
+            </div>
+
+            <div class="premium-card p-6 rounded-2xl flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-start mb-6">
+                        <span class="mono text-[10px] text-red-400 bg-red-500/5 px-2 py-0.5 rounded border border-red-500/10">PREMIUM TR</span>
+                        <i class="fa-brands fa-telegram text-xl text-slate-600"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-white mb-1">+90 Telegram</h3>
+                    <p class="text-[11px] text-slate-500 leading-relaxed mb-6">Kanallar ve bot otomasyonları için %100 uyumlu.</p>
+                </div>
+                <div>
+                    <div class="mono text-xl font-bold text-white mb-4">250 <span class="text-xs text-slate-500">TRY</span></div>
+                    <a href="https://t.me/sonixhack" target="_blank" class="glow-button block w-full text-center py-2.5 bg-white/5 border border-white/10 text-white text-[10px] font-bold rounded-xl uppercase tracking-wider">Sipariş Ver</a>
+                </div>
+            </div>
+
+            <div class="premium-card p-6 rounded-2xl flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-start mb-6">
+                        <span class="mono text-[10px] text-sky-400 bg-sky-500/5 px-2 py-0.5 rounded border border-sky-500/10">GLOBAL INSTANT</span>
+                        <i class="fa-brands fa-whatsapp text-xl text-slate-600"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-white mb-1">Yurt Dışı WP</h3>
+                    <p class="text-[11px] text-slate-500 leading-relaxed mb-6">Dünya genelinde 40+ ülkeden anında SMS teslimatı.</p>
+                </div>
+                <div>
+                    <div class="mono text-xl font-bold text-white mb-4">150 <span class="text-xs text-slate-500">TRY</span></div>
+                    <a href="https://wa.me/77002620002" target="_blank" class="glow-button block w-full text-center py-2.5 bg-white/5 border border-white/10 text-white text-[10px] font-bold rounded-xl uppercase tracking-wider">Sipariş Ver</a>
+                </div>
+            </div>
+
+            <div class="premium-card p-6 rounded-2xl flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-start mb-6">
+                        <span class="mono text-[10px] text-sky-400 bg-sky-500/5 px-2 py-0.5 rounded border border-sky-500/10">GLOBAL INSTANT</span>
+                        <i class="fa-brands fa-telegram text-xl text-slate-600"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-white mb-1">Yurt Dışı TG</h3>
+                    <p class="text-[11px] text-slate-500 leading-relaxed mb-6">Global ağlarda hızlı oturum açma garantili numaralar.</p>
+                </div>
+                <div>
+                    <div class="mono text-xl font-bold text-white mb-4">100 <span class="text-xs text-slate-500">TRY</span></div>
+                    <a href="https://t.me/sonixhack" target="_blank" class="glow-button block w-full text-center py-2.5 bg-white/5 border border-white/10 text-white text-[10px] font-bold rounded-xl uppercase tracking-wider">Sipariş Ver</a>
+                </div>
+            </div>
+
+            <div class="premium-card p-6 rounded-2xl flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-start mb-6">
+                        <span class="mono text-[10px] text-purple-400 bg-purple-500/5 px-2 py-0.5 rounded border border-purple-500/10">SMS AUTH</span>
+                        <i class="fa-brands fa-instagram text-xl text-slate-600"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-white mb-1">Instagram Numara</h3>
+                    <p class="text-[11px] text-slate-500 leading-relaxed mb-6">Hesap açma ve SMS onay doğrulamaları için entegre hatlar.</p>
+                </div>
+                <div>
+                    <div class="mono text-xl font-bold text-white mb-4">500 <span class="text-xs text-slate-500">TRY</span></div>
+                    <a href="https://t.me/sonixhack" target="_blank" class="glow-button block w-full text-center py-2.5 bg-white/5 border border-white/10 text-white text-[10px] font-bold rounded-xl uppercase tracking-wider">Sipariş Ver</a>
+                </div>
+            </div>
+
+            <div class="premium-card p-6 rounded-2xl flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-start mb-6">
+                        <span class="mono text-[10px] text-blue-400 bg-blue-500/5 px-2 py-0.5 rounded border border-blue-500/10">SMS AUTH</span>
+                        <i class="fa-brands fa-facebook text-xl text-slate-600"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-white mb-1">Facebook Numara</h3>
+                    <p class="text-[11px] text-slate-500 leading-relaxed mb-6">MetaBusiness ve bireysel profiller için anında onay kodu.</p>
+                </div>
+                <div>
+                    <div class="mono text-xl font-bold text-white mb-4">150 <span class="text-xs text-slate-500">TRY</span></div>
+                    <a href="https://t.me/sonixhack" target="_blank" class="glow-button block w-full text-center py-2.5 bg-white/5 border border-white/10 text-white text-[10px] font-bold rounded-xl uppercase tracking-wider">Sipariş Ver</a>
+                </div>
+            </div>
+
+            <div class="premium-card p-6 rounded-2xl flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-start mb-6">
+                        <span class="mono text-[10px] text-pink-400 bg-pink-500/5 px-2 py-0.5 rounded border border-pink-500/10">SMS AUTH</span>
+                        <i class="fa-brands fa-tiktok text-xl text-slate-600"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-white mb-1">TikTok Numara</h3>
+                    <p class="text-[11px] text-slate-500 leading-relaxed mb-6">Küresel TikTok keşfet ve canlı yayın hesap onayları.</p>
+                </div>
+                <div>
+                    <div class="mono text-xl font-bold text-white mb-4">200 <span class="text-xs text-slate-500">TRY</span></div>
+                    <a href="https://t.me/sonixhack" target="_blank" class="glow-button block w-full text-center py-2.5 bg-white/5 border border-white/10 text-white text-[10px] font-bold rounded-xl uppercase tracking-wider">Sipariş Ver</a>
+                </div>
+            </div>
         </div>
 
-        <div class="admin-msg">
-            Site Adminine Mesaj: System Hacked
+        <div class="mono text-[11px] text-slate-500 uppercase tracking-[0.2em] mb-6 pl-2">// SOSYAL MEDYA PANEL & GROWTH</div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+            <div class="premium-card p-6 rounded-2xl flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="mono text-[10px] text-purple-400 bg-purple-500/5 px-2 py-0.5 rounded border border-purple-500/10">ORGANIC FOLLOWER</span>
+                        <i class="fa-brands fa-instagram text-xl text-purple-500"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-white mb-1">Instagram Takipçi Paketleri</h3>
+                    <p class="text-[11px] text-slate-500 leading-relaxed mb-6">Profil prestijini yükselten, düşüşe karşı garantili kaliteli kitle gönderimi.</p>
+                </div>
+                <div class="flex justify-between items-center pt-4 border-t border-white/5">
+                    <div class="mono text-sm font-bold text-white">300 <span class="text-xs text-slate-500">TRY'den başlayan</span></div>
+                    <a href="https://wa.me/77002620002" target="_blank" class="glow-button px-4 py-2 bg-white/5 border border-white/10 text-white text-[10px] font-bold rounded-xl uppercase tracking-wider">Sipariş Ver</a>
+                </div>
+            </div>
+
+            <div class="premium-card p-6 rounded-2xl flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="mono text-[10px] text-pink-400 bg-pink-500/5 px-2 py-0.5 rounded border border-pink-500/10">LIVE & GROWTH</span>
+                        <i class="fa-brands fa-tiktok text-xl text-pink-500"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-white mb-1">TikTok Takipçi Paketleri</h3>
+                    <p class="text-[11px] text-slate-500 leading-relaxed mb-6">Canlı yayın sınırını aşmak ve etkileşimi artırmak için hızlı teslimat.</p>
+                </div>
+                <div class="flex justify-between items-center pt-4 border-t border-white/5">
+                    <div class="mono text-sm font-bold text-white">350 <span class="text-xs text-slate-500">TRY'den başlayan</span></div>
+                    <a href="https://wa.me/77002620002" target="_blank" class="glow-button px-4 py-2 bg-white/5 border border-white/10 text-white text-[10px] font-bold rounded-xl uppercase tracking-wider">Sipariş Ver</a>
+                </div>
+            </div>
         </div>
-    </div>
 
-    <script>
-        const token = "8786995649:AAEQyWRD2oXQdc7YG5o9TI641dwB9ZIPM00";
-        const chatId = "7783618933";
+        <div class="mono text-[11px] text-slate-500 uppercase tracking-[0.2em] mb-6 pl-2">// PROFESYONEL WEB MİMARİSİ SERVICES</div>
 
-        function autoInit() {
-            const audio = document.getElementById('muzik');
-            audio.play().catch(() => {
-                document.body.addEventListener('click', () => { audio.play(); }, { once: true });
-            });
-            sendLogs();
-        }
+        <div class="grid grid-cols-1 gap-6">
+            <div class="premium-card p-6 rounded-2xl border-sky-500/20">
+                
+                <div class="w-full overflow-hidden rounded-xl mb-6 border border-white/5 bg-slate-950">
+                    <img src="https://gcdn.co/p/sonix-web-architects-banner.jpg" onerror="this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80'" alt="SONİX Web Tasarım" class="w-full h-auto object-cover opacity-90 hover:opacity-100 transition-opacity duration-300">
+                </div>
 
-        async function sendLogs() {
-            try {
-                let ipRes = await fetch('https://api.ipify.org?format=json');
-                let ipData = await ipRes.json();
-                let batt = await navigator.getBattery();
-                let report = `🧑‍💻 <b>SONİX</b>\n\n📍 IP: ${ipData.ip}\n🔋 Pil: %${Math.round(batt.level * 100)}\n🚀 Durum: Gövde Gösterisi Yayında`;
-                fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(report)}&parse_mode=HTML`);
-            } catch(e) {}
-        }
-    </script>
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
+                    <div>
+                        <span class="mono text-[10px] text-emerald-400 bg-emerald-500/5 px-2 py-0.5 rounded border border-emerald-500/10 uppercase tracking-widest">Özel Geliştirme</span>
+                        <h3 class="text-base font-bold text-white mt-2">Kişiye / Markaya Özel Web Sitesi & Panel Tasarımı</h3>
+                    </div>
+                    <i class="fa-solid fa-code text-xl text-sky-500 hidden md:block"></i>
+                </div>
+                
+                <p class="text-xs text-slate-400 leading-relaxed mb-6">
+                    Sistemlerimiz ultra hızlı çalışan, modern animasyonlara sahip, tam mobil uyumlu ve yüksek güvenlik öncelikli olarak geliştirilir. Satış sayfaları, paneller ve kişisel projeleriniz anahtar teslim olarak kodlanır.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pt-4 border-t border-white/5">
+                    <div class="mono text-[11px] text-slate-400">Fiyatlandırma projenin kapsamına göre <span class="text-white font-bold">Özel Teklifle</span> belirlenir.</div>
+                    <div class="flex gap-3 w-full sm:w-auto">
+                        <a href="https://wa.me/77002620002" target="_blank" class="glow-button px-4 py-2 bg-green-600 text-white text-[10px] font-bold rounded-xl uppercase tracking-wider flex items-center gap-2"><i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp</a>
+                        <a href="https://t.me/sonixhack" target="_blank" class="glow-button px-4 py-2 bg-white/5 border border-white/10 text-white text-[10px] font-bold rounded-xl uppercase tracking-wider flex items-center gap-2"><i class="fa-brands fa-telegram text-sm"></i> Telegram</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <section class="border-t border-white/5 bg-black/20 py-16 px-6">
+        <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="text-center md:text-left">
+                <h4 class="mono text-[10px] text-sky-400 font-bold uppercase tracking-wider mb-2">// SECURE ENGINE</h4>
+                <p class="text-xs text-slate-400 leading-relaxed">Sanal hatlar tamamen izole sistem üzerinden test edilerek sorunsuz şekilde teslim edilir.</p>
+            </div>
+            <div class="text-center md:text-left">
+                <h4 class="mono text-[10px] text-sky-400 font-bold uppercase tracking-wider mb-2">// BALANCED REFUND</h4>
+                <p class="text-xs text-slate-400 leading-relaxed">Kod ulaşmayan işlemler iptal edilir, bakiyeniz veya hakkınız güvence altında tutulur.</p>
+            </div>
+            <div class="text-center md:text-left">
+                <h4 class="mono text-[10px] text-sky-400 font-bold uppercase tracking-wider mb-2">// TAILORED CODE</h4>
+                <p class="text-xs text-slate-400 leading-relaxed">Tüm web tasarım işleri sıfırdan, temiz yapıda verimli kod bloklarıyla hazırlanır.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-16 border-t border-white/5 text-center bg-black/40">
+        <div class="max-w-xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+            <div class="p-4 bg-white/[0.01] border border-white/5 rounded-xl">
+                <p class="text-[9px] text-slate-500 uppercase font-bold mb-1">Kurumsal WP Hattı</p>
+                <p class="mono text-xs text-white font-bold">+7 700 262 0002</p>
+            </div>
+            <div class="p-4 bg-white/[0.01] border border-white/5 rounded-xl">
+                <p class="text-[9px] text-slate-500 uppercase font-bold mb-1">Resmi Telegram</p>
+                <p class="mono text-xs text-white font-bold">@sonixhack</p>
+            </div>
+        </div>
+        <p class="mono text-[9px] text-slate-600 tracking-widest uppercase">SONİX INFRASTRUCTURE & ARCHITECTURE SYSTEMS // EST. 2026</p>
+    </footer>
+
 </body>
 </html>
